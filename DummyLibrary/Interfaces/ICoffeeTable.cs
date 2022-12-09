@@ -1,8 +1,5 @@
 ﻿namespace DummyLibrary.Interfaces;
 
-public interface ICoffeeTable
+public interface ICoffeeTable : IProduct
 {
-    public bool IsSquare { get; set; }
-    public bool IsLong { get; set; }
-    public void SitOn();
 }

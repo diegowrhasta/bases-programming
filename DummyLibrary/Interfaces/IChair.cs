@@ -1,7 +1,5 @@
 ﻿namespace DummyLibrary.Interfaces;
 
-public interface IChair
+public interface IChair : IProduct
 {
-    public bool IsSquare { get; set; }
-    public void SitOn();
 }

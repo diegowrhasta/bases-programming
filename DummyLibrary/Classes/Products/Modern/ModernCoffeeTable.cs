@@ -4,8 +4,8 @@ namespace DummyLibrary.Classes.Products.Modern;
 
 public class ModernCoffeeTable : ICoffeeTable
 {
-    public bool IsSquare { get; set; }
-    public bool IsLong { get; set; }
+    public bool IsSquare { get; set; } = true;
+    public bool IsLong { get; set; } = true;
 
     public void SitOn()
     {

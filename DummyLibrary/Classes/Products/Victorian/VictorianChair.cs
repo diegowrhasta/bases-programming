@@ -4,7 +4,8 @@ namespace DummyLibrary.Classes.Products.Victorian;
 
 public class VictorianChair : IChair
 {
-    public bool IsSquare { get; set; }
+    public bool IsSquare { get; set; } = true;
+    public bool IsLong { get; set; }
 
     public void SitOn()
     {

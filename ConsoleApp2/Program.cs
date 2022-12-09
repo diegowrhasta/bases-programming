@@ -37,21 +37,17 @@ if (!int.TryParse(Console.ReadLine(), out var productOption))
     return;
 }
 
-switch (productOption)
+IProduct? product = productOption switch
 {
-    case (int)ProductType.Chair:
-        var chair = factory.CreateChair();
-        chair.SitOn();
-        break;
-    case (int)ProductType.CoffeeTable:
-        var coffeeTable = factory.CreateCoffeeTable();
-        coffeeTable.SitOn();
-        break;
-    case (int)ProductType.Sofa:
-        var sofa = factory.CreateSofa();
-        sofa.SitOn();
-        break;
-    default:
-        break;
+    (int)ProductType.Chair => factory.CreateChair(),
+    (int)ProductType.CoffeeTable => factory.CreateCoffeeTable(),
+    (int)ProductType.Sofa => factory.CreateSofa(),
+    _ => null,
+};
 
+if (product is null)
+{
+    return;
 }
+
+product.SitOn();

@@ -4,7 +4,8 @@ namespace DummyLibrary.Classes.Products.Modern;
 
 public class ModernSofa : ISofa
 {
-    public bool IsLong { get; set; }
+    public bool IsSquare { get; set; }
+    public bool IsLong { get; set; } = true;
 
     public void SitOn()
     {

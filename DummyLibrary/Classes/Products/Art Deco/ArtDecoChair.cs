@@ -5,6 +5,7 @@ namespace DummyLibrary.Classes.Products.Art_Deco;
 public class ArtDecoChair : IChair
 {
     public bool IsSquare { get; set; } = true;
+    public bool IsLong { get; set; }
 
     public void SitOn()
     {

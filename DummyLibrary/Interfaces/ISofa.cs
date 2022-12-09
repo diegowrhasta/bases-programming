@@ -1,7 +1,5 @@
 ﻿namespace DummyLibrary.Interfaces;
 
-public interface ISofa
+public interface ISofa : IProduct
 {
-    public bool IsLong { get; set; }
-    public void SitOn();
 }
