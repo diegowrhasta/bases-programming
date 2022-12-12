@@ -16,5 +16,10 @@ public class CarBuilder : IBuilder
 
     public void SetGPS() => _car.GPS = "On";
 
-    public Car GetCar() => _car;
+    public Car GetCar()
+    {
+        var finalCar = _car;
+        Reset();
+        return finalCar;
+    }
 }
