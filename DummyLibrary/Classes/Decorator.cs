@@ -4,12 +4,12 @@ namespace DummyLibrary.Classes;
 
 public abstract class Decorator : INotifier
 {
-    internal readonly INotifier Notifier;
+    private readonly INotifier _notifier;
 
     protected Decorator(INotifier notifier)
     {
-        Notifier = notifier;
+        _notifier = notifier;
     }
 
-    public virtual void Send(string subject, string message) => Notifier.Send(subject, message);
+    public virtual void Send(string subject, string message) => _notifier.Send(subject, message);
 }
