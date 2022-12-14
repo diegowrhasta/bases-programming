@@ -1,14 +1,13 @@
+using DummyLibrary.Interfaces;
+
 namespace DummyLibrary.Classes;
 
-public class EmailNotifier
+public class EmailNotifier : INotifier
 {
-    public string Subject { get; set; } = string.Empty;
-    public string Message { get; set; } = string.Empty;
-
-    public void SendEmail()
+    public void Send(string subject, string message)
     {
         Console.WriteLine("Sending Email...");
-        Console.WriteLine($"Subject: {Subject}");
-        Console.WriteLine($"Message: {Message}");
+        Console.WriteLine($"Subject: {subject}");
+        Console.WriteLine($"Message: {message}");
     }
 }

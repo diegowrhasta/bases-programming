@@ -2,5 +2,5 @@ namespace DummyLibrary.Interfaces;
 
 public interface INotifier
 {
-    void Execute();
+    void Send(string subject, string message);
 }
