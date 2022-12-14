@@ -14,11 +14,11 @@ public class DeliveryBox : Product
     {
         var random = new Random();
         var roll = random.Next();
-        var shippingInfo = roll % 2 == 0
-            ? new Tuple<string, double>("DHL", 10d)
-            : new Tuple<string, double>("Fedex", 5d);
+        (string Carrier, double Cost) shippingInfo = roll % 2 == 0
+            ? ("DHL", 10d)
+            : ("Fedex", 5d);
 
-        Console.WriteLine($"Delivery is being taken care by {shippingInfo.Item1}.\nDelivery Cost: {shippingInfo.Item2} $");
+        Console.WriteLine($"Delivery is being taken care by {shippingInfo.Carrier}.\nDelivery Cost: {shippingInfo.Cost} $");
         var deliveryBoxPrice = base.CalculatePrice();
         var productsPrice = Products.Sum(p => p.CalculatePrice());
         return shippingInfo.Item2 + productsPrice + deliveryBoxPrice;
