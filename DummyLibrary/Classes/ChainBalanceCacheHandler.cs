@@ -8,8 +8,8 @@ public class ChainBalanceCacheHandler : ChainHandler
         {
             return new OperationResponse
             {
-                Code = 200,
-                ResponseData = 1m,
+                Code = 303,
+                ResponseData = 404m,
             };
         }
 

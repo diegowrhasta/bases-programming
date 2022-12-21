@@ -12,7 +12,7 @@ public class ChainRepositoryQueryHandler : ChainHandler
             return new OperationResponse
             {
                 Code = 500,
-                ErrorMessage = $"Could not find balance for {chainHandlerRequest.UserName}",
+                ErrorMessage = $"Could not find balance for '{chainHandlerRequest.UserName}'",
             };
         }
 
