@@ -2,5 +2,5 @@
 
 using DummyLibrary.Classes;
 
-var service = new ApiExploderService(userName: "diegow", shardId: 1);
+var service = new ApiExploderServiceAuthService(userName: "diegow", shardId: 1);
 await service.ExplodeMoonAsync();

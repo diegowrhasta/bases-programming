@@ -2,8 +2,8 @@ namespace DummyLibrary.Classes;
 
 public class ApiExploderService
 {
-    private string _userName;
-    private int _shardId;
+    private readonly string _userName;
+    private readonly int _shardId;
     private readonly Random _random;
     private const string Dots = "...";
 
@@ -16,7 +16,7 @@ public class ApiExploderService
 
     public async Task ExplodeMoonAsync()
     {
-        Console.WriteLine($"Connecting to terminal {_shardId}");
+        Console.WriteLine($"Connecting to terminal {_shardId}, Welcome {_userName}.");
         await Task.Delay(millisecondsDelay: 100);
         Console.WriteLine($"Connection established. Destroying {_shardId}'s Moon");
         await SimulateWaitingAsync();
