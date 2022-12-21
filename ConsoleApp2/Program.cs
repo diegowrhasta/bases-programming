@@ -1,3 +1,6 @@
 ﻿// See https://aka.ms/new-console-template for more information
 
-Console.WriteLine("Hello, World!");
+using DummyLibrary.Classes;
+
+var service = new ApiExploderService(userName: "diegow", shardId: 1);
+await service.ExplodeMoonAsync();
