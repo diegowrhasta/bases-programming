@@ -1,0 +1,7 @@
+﻿<wpf:ResourceDictionary xml:space="preserve" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:ss="urn:shemas-jetbrains-com:settings-storage-xaml" xmlns:wpf="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=9dfcc347_002Db9a2_002D49eb_002Da412_002D1fecf580d1a9/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="PogoPogo_Iterator_ShouldSucceed" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+  &lt;TestAncestor&gt;&#xD;
+    &lt;TestId&gt;xUnit::A809CC4B-2CFA-4781-9344-4F9CAEB416AD::net7.0::DummyLibraryTestsIterator.PogoPogoIteratorTests.PogoPogo_Iterator_ShouldSucceed&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;xUnit::A809CC4B-2CFA-4781-9344-4F9CAEB416AD::net7.0::DummyLibraryTestsIterator.PogoPogoIteratorTests.Even_Iterator_ShouldSucceed&lt;/TestId&gt;&#xD;
+  &lt;/TestAncestor&gt;&#xD;
+&lt;/SessionState&gt;</s:String></wpf:ResourceDictionary>
