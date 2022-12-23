@@ -14,3 +14,12 @@ var payDetails = new PayPayload
 Console.WriteLine(payDetails);
 var payOrder = new PayOrder(payDetails);
 payOrder.Execute();
+
+var chickenDetails = new ChickenPayload
+{
+    ChickenDishNumber = 3,
+};
+Console.WriteLine(chickenDetails);
+
+var chickenOrder = new ChickenOrder(chickenDetails);
+chickenOrder.Execute();
