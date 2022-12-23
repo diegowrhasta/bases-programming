@@ -5,7 +5,7 @@ using Moq;
 
 namespace DummyLibraryTestsIterator;
 
-public class PogoPogoIteratorTests
+public class IteratorTests
 {
     [Fact]
     public void PogoPogo_Iterator_ShouldSucceed()
