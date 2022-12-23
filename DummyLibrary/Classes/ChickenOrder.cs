@@ -16,7 +16,7 @@ public class ChickenOrder : IOrder
     public void Execute()
     {
         Console.WriteLine("Chicken order received. Preparing...");
-        var dishes = new List<IIngredient>();
+        var dishes = new List<Ingredient>();
         for (var i = 0; i < _payload.ChickenDishNumber; i++)
         {
             dishes.Add(GetChickenDishDetails());
@@ -27,7 +27,7 @@ public class ChickenOrder : IOrder
         Console.WriteLine($"Don't forget your order amounts to: {totalCost:C2}");
     }
 
-    private static IIngredient GetChickenDishDetails()
+    private static Ingredient GetChickenDishDetails()
     {
         // One chicken dish requires this parameters.
         var ingredientCache = new IngredientCache();
@@ -44,7 +44,7 @@ public class ChickenOrder : IOrder
         {
             Units = 2,
         };
-        var ingredientList = new List<IIngredient>
+        var ingredientList = new List<Ingredient>
         {
             chickenBreast,
             garlic,

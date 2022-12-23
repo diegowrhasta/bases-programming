@@ -4,15 +4,15 @@ using DummyLibrary.Interfaces;
 
 namespace DummyLibrary.Classes;
 
-public class IngredientCache : IIngredient
+public class IngredientCache : Ingredient
 {
-    private readonly IList<IIngredient> _ingredientList = new List<IIngredient>();
+    private readonly IList<Ingredient> _ingredientList = new List<Ingredient>();
 
-    public string Name { get; set; } = "Ingredient Cache";
-    public decimal Cost { get; set; } = 24;
-    public int Units { get; set; } = 1;
+    public override string Name { get; set; } = "Ingredient Cache";
+    public override decimal Cost { get; set; } = 24;
+    public override int Units { get; set; } = 1;
 
-    public decimal GetCost()
+    public override decimal GetCost()
     {
         var cacheCost = Cost * Units;
         Console.WriteLine($"The cache has been received. Cache cost: {cacheCost:C2}");
@@ -23,8 +23,8 @@ public class IngredientCache : IIngredient
         return total;
     }
 
-    public void AddIngredient(IIngredient ingredient) => _ingredientList.Add(ingredient);
-    public void AddIngredients(IEnumerable<IIngredient> ingredient) => _ingredientList.AddRange(ingredient);
-    public void RemoveIngredient(IIngredient ingredient) => _ingredientList.Remove(ingredient);
-    public void RemoveIngredient(Func<IIngredient, bool> ingredient) => _ingredientList.Remove(ingredient);
+    public void AddIngredient(Ingredient ingredient) => _ingredientList.Add(ingredient);
+    public void AddIngredients(IEnumerable<Ingredient> ingredient) => _ingredientList.AddRange(ingredient);
+    public void RemoveIngredient(Ingredient ingredient) => _ingredientList.Remove(ingredient);
+    public void RemoveIngredient(Func<Ingredient, bool> ingredient) => _ingredientList.Remove(ingredient);
 }

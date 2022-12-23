@@ -3,17 +3,9 @@ using DummyLibrary.Models;
 
 namespace DummyLibrary.Classes.Ingredients;
 
-public class ChickenBreast : IIngredient
+public class ChickenBreast : Ingredient
 {
-    public string Name { get; set; } = "Chicken Breast";
-    public decimal Cost { get; set; } = 3;
-    public int Units { get; set; }
-
-    public decimal GetCost()
-    {
-        var cost = Cost * Units;
-        Console.WriteLine($"{Units} {Name}(s) requested. Cost: {cost:C2}");
-
-        return cost;
-    }
+    public override string Name { get; set; } = "Chicken Breast";
+    public override decimal Cost { get; set; } = 3;
+    public override int Units { get; set; }
 }
