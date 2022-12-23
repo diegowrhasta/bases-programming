@@ -17,7 +17,7 @@ public class MapperTests
             Price = 33,
         };
         var emptyDummy = new DummyObject();
-        emptyDummy = mapper.Map<DummyObject>(dummy);
+        mapper.Map(dummy, emptyDummy);
         Assert.Equal(dummy.Name, emptyDummy.Name);
         Assert.Equal(dummy.PageNumber, emptyDummy.PageNumber);
         Assert.Equal(dummy.Price, emptyDummy.Price);
