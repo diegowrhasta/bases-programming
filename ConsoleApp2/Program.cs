@@ -1,3 +1,12 @@
 ﻿// See https://aka.ms/new-console-template for more information
 
-Console.WriteLine("Hello, World!");
+using DummyLibrary.Classes;
+
+GameAi orcs = new OrcsAi();
+orcs.TakeTurn();
+
+GameAi humans = new HumansAi();
+humans.TakeTurn();
+
+GameAi mobs = new MobAi();
+mobs.TakeTurn();
