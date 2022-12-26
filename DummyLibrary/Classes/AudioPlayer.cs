@@ -1,6 +1,4 @@
-﻿using DummyLibrary.Extensions;
-
-namespace DummyLibrary.Classes;
+﻿namespace DummyLibrary.Classes;
 
 public class AudioPlayer
 {
@@ -18,6 +16,7 @@ public class AudioPlayer
 
     public string CurrentSong { get; set; } = string.Empty;
     public int ElapsedSeconds { get; set; }
+    public bool IsPlaying { get; set; }
 
     public void ChangeState(PlayerState state) => _state = state;
 
@@ -32,12 +31,14 @@ public class AudioPlayer
     {
         Console.WriteLine($"Playing a song... {CurrentSong}");
         Console.WriteLine("It's beautiful!");
+        IsPlaying = true;
     }
 
     public void StopPlayback()
     {
         Console.WriteLine($"Stopping song... {CurrentSong}");
         Console.WriteLine("Silence now");
+        IsPlaying = false;
     }
 
     public void NextSong()
@@ -48,8 +49,12 @@ public class AudioPlayer
 
         var newCurrentSong = Playlist.ElementAt(nextSongIndex);
         CurrentSong = newCurrentSong;
-        Console.WriteLine($"Next song... {CurrentSong}");
-        Console.WriteLine("Playing!");
+        ElapsedSeconds = 0;
+        Console.WriteLine($"Changing current song for next one... {CurrentSong}");
+        if (IsPlaying)
+        {
+            Console.WriteLine("Playing...");
+        }
     }
 
     public void PreviousSong()
@@ -60,8 +65,12 @@ public class AudioPlayer
 
         var newCurrentSong = Playlist.ElementAt(nextSongIndex);
         CurrentSong = newCurrentSong;
-        Console.WriteLine($"Previous song... {CurrentSong}");
-        Console.WriteLine("Playing!");
+        ElapsedSeconds = 0;
+        Console.WriteLine($"Changing current song for previous one... {CurrentSong}");
+        if (IsPlaying)
+        {
+            Console.WriteLine("Playing...");
+        }
     }
 
     public void FastForward(int secondsForward) => ElapsedSeconds += secondsForward;

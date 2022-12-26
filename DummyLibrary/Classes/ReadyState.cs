@@ -6,7 +6,11 @@ public class ReadyState : PlayerState
     {
     }
 
-    public override void ClickLock() => Player.ChangeState(new LockedState(Player));
+    public override void ClickLock()
+    {
+        Console.WriteLine("Locking the player...");
+        Player.ChangeState(new LockedState(Player));
+    }
 
     public override void ClickPlay()
     {
