@@ -1,8 +1,9 @@
 ﻿// See https://aka.ms/new-console-template for more information
 
 using DummyLibrary.Classes;
+using DummyLibrary.Interfaces;
 
-var rectangles = new object[]
+var rectangles = new IShape[]
 {
     new Rectangle{ Height = 10, Width = 10, },
     new Rectangle{ Height = 20, Width = 10, },

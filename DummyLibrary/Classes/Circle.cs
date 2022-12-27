@@ -1,6 +1,10 @@
-﻿namespace DummyLibrary.Classes;
+﻿using DummyLibrary.Interfaces;
 
-public class Circle
+namespace DummyLibrary.Classes;
+
+public class Circle : IShape
 {
     public double Radius { get; set; }
+
+    public double GetArea() => Radius * Radius * Math.PI;
 }
