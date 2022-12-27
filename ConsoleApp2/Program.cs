@@ -1,3 +1,10 @@
 ﻿// See https://aka.ms/new-console-template for more information
 
-Console.WriteLine("Hello, World!");
+using DummyLibrary.Classes;
+using DummyLibrary.Interface;
+
+ILead lead = new TeamLead();
+
+lead.AssignTask();
+lead.CreateSubTask();
+lead.WorkOnTask();
