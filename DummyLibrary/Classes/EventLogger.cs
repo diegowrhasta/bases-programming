@@ -2,10 +2,10 @@
 
 namespace DummyLibrary.Classes;
 
-public class DbLogger : ILogger
+public class EventLogger : ILogger
 {
     public void LogMessage(string message)
     {
-        // Code to write message to database
+        // Code for Event Logging.
     }
 }

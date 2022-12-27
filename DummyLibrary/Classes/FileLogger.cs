@@ -1,6 +1,8 @@
-﻿namespace DummyLibrary.Classes;
+﻿using DummyLibrary.Interfaces;
 
-public class FileLogger
+namespace DummyLibrary.Classes;
+
+public class FileLogger : ILogger
 {
     public void LogMessage(string stackTrace)
     {

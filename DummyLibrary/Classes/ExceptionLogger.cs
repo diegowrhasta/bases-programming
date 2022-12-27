@@ -1,17 +1,20 @@
-﻿namespace DummyLibrary.Classes;
+﻿using DummyLibrary.Interfaces;
+
+namespace DummyLibrary.Classes;
 
 public class ExceptionLogger
 {
-    public void LogIntoFile(Exception exception)
+    private ILogger _logger;
+
+    public ExceptionLogger(ILogger logger)
     {
-        var fileLogger = new FileLogger();
-        fileLogger.LogMessage(GetUserReadableMessage(exception));
+        _logger = logger;
     }
-    
-    public void LogIntoDataBase(Exception exception)
+
+    public void LogException(Exception exception)
     {
-        var fileLogger = new DbLogger();
-        fileLogger.LogMessage(GetUserReadableMessage(exception));
+        var message = GetUserReadableMessage(exception);
+        _logger.LogMessage(message);
     }
 
     private string GetUserReadableMessage(Exception exception)
