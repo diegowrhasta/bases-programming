@@ -2,7 +2,7 @@
 
 namespace DummyLibrary.Classes;
 
-public class TeamLead : ILead
+public class TeamLead : ILead, IProgrammer
 {
     public void CreateSubTask()
     {

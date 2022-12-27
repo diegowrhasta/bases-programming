@@ -13,9 +13,4 @@ public class Manager : ILead
     {
         // Manager assigns Task
     }
-
-    public void WorkOnTask()
-    {
-        throw new Exception("Manager can't work on Task");
-    }
 }
