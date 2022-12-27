@@ -1,9 +1,11 @@
-﻿namespace DummyLibrary.Classes;
+﻿using DummyLibrary.Interfaces;
 
-public class ReadOnlySqlFile : SqlFile
+namespace DummyLibrary.Classes;
+
+public class ReadOnlySqlFile : File, IReadableSqlFile
 {
-    public new void SaveText()
-    {
-        throw new IOException("Can't Save");
-    }
+    protected override string FilePath { get; set; } = string.Empty;
+    protected override string FileText { get; set; } = "Read Only, Brother";
+
+    public string LoadText() => FileText;
 }
