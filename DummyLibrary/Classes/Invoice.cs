@@ -1,9 +1,19 @@
 ﻿using System.Net.Mail;
+using DummyLibrary.Interface;
 
 namespace DummyLibrary.Classes;
 
 public class Invoice
 {
+    private readonly ILogger _logger;
+    private readonly IEmailService _emailService;
+
+    public Invoice()
+    {
+        _logger = new Logger();
+        _emailService = new EmailService();
+    }
+
     public long InvAmount { get; set; }
     public DateTime InvDate { get; set; }
 
@@ -11,15 +21,15 @@ public class Invoice
     {
         try
         {
+            _logger.Info("Starting Add Invoice");
             // Here we need to write the Code for adding invoice
             // Once the Invoice has been added, then send the  mail
-            var mailMessage = new MailMessage("EMailFrom", "EMailTo", "EMailSubject", "EMailBody");
-            this.SendInvoiceEmail(mailMessage);
+            PrepareEmailForSending();
         }
         catch (Exception ex)
         {
             //Error Logging
-            File.WriteAllText(@"c:\ErrorLog.txt", ex.ToString());
+            _logger.Error("Error Adding Invoice", ex);
         }
     }
 
@@ -27,25 +37,21 @@ public class Invoice
     {
         try
         {
+            _logger.Info("Starting Delete Invoice");
             //Here we need to write the Code for Deleting the already generated invoice
+            PrepareEmailForSending();
         }
         catch (Exception ex)
         {
             //Error Logging
-            File.WriteAllText(@"c:\ErrorLog.txt", ex.ToString());
+            _logger.Error("Error Deleting Invoice", ex);
         }
     }
 
-    public void SendInvoiceEmail(MailMessage mailMessage)
+    private void PrepareEmailForSending()
     {
-        try
-        {
-            // Here we need to write the Code for Email setting and sending the invoice mail
-        }
-        catch (Exception ex)
-        {
-            //Error Logging
-            File.WriteAllText(@"c:\ErrorLog.txt", ex.ToString());
-        }
+        _logger.Info("Starting Email Sending");
+        var mailMessage = new MailMessage("diegow@gmail.com", "diegow@gmail.com", "EMailSubject", "EMailBody");
+        _emailService.SendInvoiceEmail(mailMessage);
     }
 }
