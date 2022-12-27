@@ -7,6 +7,12 @@ public class ExceptionLogger
         var fileLogger = new FileLogger();
         fileLogger.LogMessage(GetUserReadableMessage(exception));
     }
+    
+    public void LogIntoDataBase(Exception exception)
+    {
+        var fileLogger = new DbLogger();
+        fileLogger.LogMessage(GetUserReadableMessage(exception));
+    }
 
     private string GetUserReadableMessage(Exception exception)
     {
