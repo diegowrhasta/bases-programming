@@ -1,3 +1,7 @@
 ﻿// See https://aka.ms/new-console-template for more information
 
-Console.WriteLine("Hello, World!");
+using DummyLibrary.Classes;
+
+var invoice = new Invoice();
+invoice.AddInvoice();
+invoice.DeleteInvoice();
