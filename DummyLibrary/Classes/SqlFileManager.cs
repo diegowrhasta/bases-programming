@@ -21,7 +21,10 @@ public class SqlFileManager
     {
         foreach (var sqlFile in SqlFiles)
         {
-            sqlFile.SaveText();
+            if (sqlFile is not ReadOnlySqlFile)
+            {
+                sqlFile.SaveText();
+            }
         }
     }
 }
