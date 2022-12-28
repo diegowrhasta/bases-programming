@@ -10,4 +10,4 @@ var washingMachine = new WashingMachine();
 washingMachine.WashClothes();
 
 // Encapsulation is this ability/property of knowing what to expose to the outside and what not to, more often than 
-// not in order to keep a class working consistently and correctly.
+// not in order to keep a class working consistently and correctly. (Expressly though, it tries to keep state private)
